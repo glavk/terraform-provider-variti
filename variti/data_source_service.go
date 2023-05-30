@@ -7,17 +7,17 @@ import (
 	"github.com/hashicorp/terraform-plugin-sdk/v2/helper/schema"
 )
 
-func dataSourceScaffolding() *schema.Resource {
+func dataSourceService() *schema.Resource {
 	return &schema.Resource{
 		// This description is used by the documentation generator and the language server.
-		Description: "Sample data source in the Terraform provider scaffolding.",
+		Description: "Service data source in the Terraform provider Variti.",
 
-		ReadContext: dataSourceScaffoldingRead,
+		ReadContext: dataSourceServiceRead,
 
 		Schema: map[string]*schema.Schema{
-			"sample_attribute": {
+			"name_attribute": {
 				// This description is used by the documentation generator and the language server.
-				Description: "Sample attribute.",
+				Description: "Name attribute.",
 				Type:        schema.TypeString,
 				Required:    true,
 			},
@@ -25,7 +25,7 @@ func dataSourceScaffolding() *schema.Resource {
 	}
 }
 
-func dataSourceScaffoldingRead(ctx context.Context, d *schema.ResourceData, meta interface{}) diag.Diagnostics {
+func dataSourceServiceRead(ctx context.Context, d *schema.ResourceData, meta interface{}) diag.Diagnostics {
 	// use the meta value to retrieve your client from the provider configure method
 	// client := meta.(*apiClient)
 
